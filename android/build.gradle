@@ -29,7 +29,15 @@ android {
         namespace 'com.javih.add_2_calendar'
     }
 
-    compileSdkVersion 34
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 28
+        targetSdk 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        setProperty("archivesBaseName", "v" + flutterVersionName + "-" + flutterVersionCode + "")
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,11 +51,6 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
-    }
-
-    defaultConfig {
-        minSdkVersion 28
-        targetSdkVersion 34
     }
 
     dependencies {
